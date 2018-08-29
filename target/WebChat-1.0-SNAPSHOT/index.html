@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Start Page</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+<!-- The Modal -->
+<div id="Modal" class="modal">
+    <div id="mainContent">
+        <!-- Modal content -->
+        <div id="contactBoxContent" class="contactContent">
+            <h2>ChatRoom3000</h2>
+            <form id="chatRoomSearchForm">
+                <input id="chatRoomSearch" type="text">
+            </form>
+            <div id="activeChatRooms">
+                <button class="chatRoom" onclick="goToChat()">Open Modal</button>
+                <button class="chatRoom" onclick="goToChat()">Open Modal</button>
+                <button class="chatRoom" onclick="goToChat()">Open Modal</button>
+                <button class="chatRoom" onclick="goToChat()">Open Modal</button>
+                <button class="chatRoom" onclick="goToChat()">Open Modal</button>
+                <button class="chatRoom" onclick="goToChat()">Open Modal</button>
+            </div>
+        </div>
+        <!-- Modal content -->
+        <div id="chatBoxContent" class="chatContentHidden">
+            <span id="close">&times;</span>
+            <div id="chatBoxInnerContent">
+                <h2>Name of the chat</h2>
+                <div id="chatRoomMembers" class="displayInlineBlock w30Width">
+                </div><div id="ongoingChat" class="displayInlineBlock w70Width">
+                    <div id="ongoingChatView">
+                        <p>
+                            TEST
+                        </p>
+                    </div>
+                <div class="maxWidth">
+                    <form class="w80Width displayInlineBlock h40px pm0">
+                        <input id="ongoingChatTextInput" type="text" class="h40px pm0">
+                        <input type="file" name="pic" accept="image/*">
+                    </form><button class="w20Width displayInlineBlock h40px pm0 boxSizingBorder verticalAlignTop" onclick="submitMessageToChat()">
+                        Submit
+                    </button>
+                </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,234 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/*
+    Created on : 27.aug.2018, 12:29:41
+    Author     : olavt
+*/
+
+body {
+    margin: 0px;
+    overflow: hidden;
+}
+
+h2 {
+    text-align: center;
+    width: 100%;
+}
+
+/* The Modal (background) */
+.modal {
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: hidden;
+    background-image: linear-gradient(rgba(0,0,0,0) , rgba(0,0,0,1));
+}
+
+#mainContent {
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 900px;
+}
+
+#chatRoomSearch {
+    width: 100%;
+}
+
+#addAssetSymbol {
+    display: inline;
+    width:10%;
+}
+
+#chatRoomSearchForm {
+    max-width: 300px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 16px;
+}
+
+#chatBoxInnerContent {
+    padding: 16px;
+
+}
+
+#ongoingChatView {
+    border: solid 1px black;
+    overflow: auto;
+    height: 300px;
+}
+
+#ongoingChatTextInput {
+    font-size: 18px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/* Modal Content */
+.contactContent {
+    overflow: auto;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: #fefefe;
+    border: 1px solid #888;
+    width: 100%;
+    opacity: 1;
+    margin-top: 120px;
+    animation-name: downOne;
+    animation-duration: 0.5s;
+}
+
+/* Modal Content */
+.contactContentHidden {
+    overflow: auto;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #fefefe;
+    border: 1px solid #888;
+    opacity: 1;
+    margin-top: 120px;
+    animation-name: upOne;
+    animation-duration: 0.5s;
+}
+
+/* Modal Content */
+.chatContent {
+    overflow: auto;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #fefefe;
+    border: 1px solid #888;
+    opacity: 1;
+    margin-top: 120px;
+    animation-name: upTwo;
+    animation-duration: 0.5s;
+}
+
+.chatRoom {
+    display: inline-block;
+    width: 33%;
+    height: 64px;
+}
+
+/* Modal Content */
+.chatContentHidden {
+    overflow: auto;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #fefefe;
+    border: 1px solid #888;
+    opacity: 1;
+    margin-top: 100vh;
+    animation-name: downTwo;
+    animation-duration: 0.5s;
+}
+
+/* The Close Button */
+#close {
+    color: #aaaaaa;
+    float: right;
+    font-size: 28px;
+    margin-right: 16px;
+    font-weight: bold;
+}
+
+#close:hover,
+#close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.boxSizingBorder {
+    box-sizing: border-box;
+}
+
+.displayInlineBlock {
+    display: inline-block;
+}
+
+.pm0 {
+    margin: 0px;
+    padding: 0px;
+}
+
+.pa16px {
+    padding: 16px;
+}
+
+.noBorder {
+    border: 0px;
+}
+
+.verticalAlignTop {
+    vertical-align: top;
+}
+
+.h38px {
+    height: 38px;
+}
+
+.h40px {
+    height: 40px;
+}
+
+.maxWidth {
+    width: 100%;
+}
+
+.w10Width {
+    width: 10%;
+}
+
+.w20Width {
+    width: 20%;
+}
+
+.w30Width {
+    width: 30%;
+}
+
+.w70Width {
+    width: 70%;
+}
+
+.w80Width {
+    width: 80%;
+}
+
+.w90Width {
+    width: 90%;
+}
+
+@keyframes downOne {
+    from {margin-top: 0px; opacity: 0;}
+    to {margin-top: 120px; opacity: 1;}
+}
+
+@keyframes upOne {
+    from {margin-top: 120px; opacity: 1;}
+    to {margin-top: 0px; opacity: 0;}
+}
+
+@keyframes upTwo {
+    from {margin-top: 100vh; opacity: 0;}
+    to {margin-top: 120px; opacity: 1;}
+}
+
+@keyframes downTwo {
+    from {margin-top: 120px; opacity: 1;}
+    to {margin-top: 100vh; opacity: 0;}
+}
