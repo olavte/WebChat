@@ -6,6 +6,9 @@
     <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
+<!-- The Matrix -->
+<canvas id="matrix"></canvas>
+
 <!-- The Modal -->
 <div id="Modal" class="modal">
     <div id="mainContent">
@@ -31,24 +34,21 @@
                 <h2>Name of the chat</h2>
                 <div id="chatRoomMembers" class="displayInlineBlock w30Width">
                 </div><div id="ongoingChat" class="displayInlineBlock w70Width">
-                    <div id="ongoingChatView">
-                        <p>
-                            TEST
-                        </p>
+                    <div id="ongoingChatView" class="font18px">
                     </div>
-                <div class="maxWidth">
-                    <form class="w80Width displayInlineBlock h40px pm0">
-                        <input id="ongoingChatTextInput" type="text" class="h40px pm0">
-                        <input type="file" name="pic" accept="image/*">
-                    </form><button class="w20Width displayInlineBlock h40px pm0 boxSizingBorder verticalAlignTop" onclick="submitMessageToChat()">
-                        Submit
-                    </button>
-                </div>
+                    <div id="chatInputDialog" class="maxWidth">
+                        <div id="chatTextInput"
+                             class=" w90Width displayInlineBlock hMin40px pm0 verticalAlignTop border boxSizingBorder">
+                        </div><div id="chatImageAddButton" onclick="addAsset()" class="w5Width displayInlineBlock h40px pm0 verticalAlignTop">
+                    </div><div id="chatSubmitButton" class="w5Width displayInlineBlock h40px pm0 boxSizingBorder verticalAlignTop" onclick="submitMessageToChat()">
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
 </div>
 <script src="script.js"></script>
+<script src="matrix.js"></script>
 </body>
 </html>

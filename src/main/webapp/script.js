@@ -3,10 +3,6 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
-// Get the modal
-var modal = document.getElementById('Modal');
-
 var chatBox = document.getElementById("chatBoxContent");
 var contactBox = document.getElementById("contactBoxContent");
 
@@ -37,14 +33,44 @@ chatBox.addEventListener("animationend", function () {
         }
     }, true);
 
-chatBox.style.display = "none";
+var message  = document.getElementById("chatTextInput");
+message.innerHTML = "";
+message.addEventListener('keypress', function(e) {
+    var key = e.which || e.keyCode;
+    if (key === 13 && !e.shiftKey) {
+        e.preventDefault();
+        submitMessageToChat();
+    }
+});
 
 function submitMessageToChat() {
-
-    var message  = document.getElementById("ongoingChatTextInput");
     var chatView = document.getElementById("ongoingChatView");
 
-    chatView.innerHTML += "<p>" + message.value + "</p>";
-    message.innerText = "";
+    if(message.innerHTML !== "") {
+        chatView.innerHTML += "<div class='chatBubble'>" + message.innerHTML + "</div>";
+        message.innerHTML = "";
+    }
 }
+
+var input = document.createElement('input');
+input.type = 'file';
+input.addEventListener('change', function () {
+    var message  = document.getElementById("chatTextInput");
+    if (input.files && input.files[0]) {
+        var reader = new FileReader();
+        reader.onload = function(e) {
+            alert(e.target.result);
+            message.innerHTML += "<img src='" + e.target.result + "' width='100'>";
+        };
+
+        reader.readAsDataURL(input.files[0]);
+    }
+});
+
+function addAsset() {
+    input.click();
+}
+
+chatBox.style.display = "none";
+document.getElementById("chatTextInput").contentEditable='true';
 
