@@ -71,6 +71,65 @@ function addAsset() {
     input.click();
 }
 
+function addChatRoom() {
+    var chatRooms = document.getElementById("activeChatRooms");
+    chatRooms.innerHTML += "<button class=\"chatRoom\" onclick=\"goToChat()\">Open Modal</button>";
+}
+
+var selectedMemberList = [];
+
+function checkMemberToChatRoom(memberElement, name) {
+    if(memberElement.innerHTML === "[x]") {
+        memberElement.innerHTML = "[ ]";
+        for(var i = 0; i < selectedMemberList.length; i++){
+            if(selectedMemberList[i] === name) {
+                selectedMemberList.splice(i, 1);
+            }
+        }
+    } else {
+        memberElement.innerHTML = "[x]";
+        selectedMemberList.push(name);
+    }
+}
+
+function addMemberToChatRoom() {
+    var memberList = document.getElementById("chatRoomMembersList");
+    for (var i = 0; i < selectedMemberList.length; i++) {
+        memberList.innerHTML += "<p>" + selectedMemberList[i] +"</p>";
+    }
+    hideAddNewMemberToChatModal();
+}
+
 chatBox.style.display = "none";
 document.getElementById("chatTextInput").contentEditable='true';
 
+
+//MODAL
+
+// Get the modal
+var modal = document.getElementById('myModal');
+
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[0];
+
+// When the user clicks the button, open the modal
+function displayAddNewMemberToChatModal() {
+    modal.style.display = "block";
+}
+
+function hideAddNewMemberToChatModal() {
+    modal.style.display = "none";
+}
+
+
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() {
+    modal.style.display = "none";
+};
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
+};

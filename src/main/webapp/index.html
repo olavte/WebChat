@@ -9,32 +9,78 @@
 <!-- The Matrix -->
 <canvas id="matrix"></canvas>
 
-<!-- The Modal -->
-<div id="Modal" class="modal">
+<!-- The Add Member to Chat Modal -->
+<div id="myModal" class="modal">
+    <!-- Modal content -->
+    <div class="modal-content">
+        <span class="close">&times;</span>
+        <p>Please select the members you want to add to the chat</p>
+        <div id="addMemberToChatList">
+            <div class="memberInAddMemberToChatList">
+                <p class="displayInlineBlock w70Width">
+                    Olav Telseth
+                </p><div class="addMemberToChat displayInlineBlock w30Width textAlignRight"
+                         onclick="checkMemberToChatRoom(this, 'Olav Telseth')">[ ]</div>
+            </div>
+            <div class="memberInAddMemberToChatList">
+                <p class="displayInlineBlock w70Width">
+                    Simon Synnes
+                </p><div class="addMemberToChat displayInlineBlock w30Width textAlignRight"
+                         onclick="checkMemberToChatRoom(this, 'Simon Synnes')">[ ]</div>
+            </div>
+        </div>
+        <button onclick="addMemberToChatRoom()">
+            Submit
+        </button>
+    </div>
+
+</div>
+
+<!-- The Chat -->
+<div class="shader">
     <div id="mainContent">
-        <!-- Modal content -->
+        <!-- ChatRooms -->
         <div id="contactBoxContent" class="contactContent">
+            <button id="newChatRoomButton" onclick="addChatRoom()">
+                New ChatRoom
+            </button>
             <h2>ChatRoom3000</h2>
             <form id="chatRoomSearchForm">
                 <input id="chatRoomSearch" type="text">
             </form>
             <div id="activeChatRooms">
-                <button class="chatRoom" onclick="goToChat()">Open Modal</button>
-                <button class="chatRoom" onclick="goToChat()">Open Modal</button>
-                <button class="chatRoom" onclick="goToChat()">Open Modal</button>
-                <button class="chatRoom" onclick="goToChat()">Open Modal</button>
-                <button class="chatRoom" onclick="goToChat()">Open Modal</button>
-                <button class="chatRoom" onclick="goToChat()">Open Modal</button>
+                <button class="chatRoom" onclick="goToChat()">
+                    Open Modal
+                </button><button class="chatRoom" onclick="goToChat()">
+                    Open Modal
+                </button><button class="chatRoom" onclick="goToChat()">
+                    Open Modal
+                </button><button class="chatRoom" onclick="goToChat()">
+                    Open Modal
+                </button><button class="chatRoom" onclick="goToChat()">
+                    Open Modal
+                </button><button class="chatRoom" onclick="goToChat()">
+                    Open Modal
+                </button>
             </div>
         </div>
-        <!-- Modal content -->
+        <!-- Chat -->
         <div id="chatBoxContent" class="chatContentHidden">
             <span id="close">&times;</span>
             <div id="chatBoxInnerContent">
                 <h2>Name of the chat</h2>
-                <div id="chatRoomMembers" class="displayInlineBlock w30Width">
+                <div id="chatRoomMembers" class="displayInlineBlock verticalAlignTop border boxSizingBorder maxHeight">
+                    <header id="chatRoomMembersHeader">
+                        Members:
+                        <div id="addMemberToChatRoomButton" class="floatRight" onclick="displayAddNewMemberToChatModal()">
+                            (+)
+                        </div>
+                    </header>
+                    <div id="chatRoomMembersList">
+
+                    </div>
                 </div><div id="ongoingChat" class="displayInlineBlock w70Width">
-                    <div id="ongoingChatView" class="font18px">
+                    <div id="ongoingChatView" class="font18px boxSizingBorder">
                     </div>
                     <div id="chatInputDialog" class="maxWidth">
                         <div id="chatTextInput"

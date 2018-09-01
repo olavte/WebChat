@@ -30,8 +30,7 @@ canvas {
     z-index:-1;
 }
 
-/* The Modal (background) */
-.modal {
+.shader {
     position: fixed; /* Stay in place */
     z-index: 1; /* Sit on top */
     left: 0;
@@ -40,6 +39,44 @@ canvas {
     height: 100%; /* Full height */
     overflow: hidden;
     background-image: linear-gradient(rgba(0,0,0,0) , rgba(0,0,0,1));
+}
+
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 2; /* Sit on top */
+    padding-top: 100px; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,5,0,0.5); /* Black w/ opacity */
+}
+
+/* Modal Content */
+.modal-content {
+    background-color: #fefefe;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 20%;
+}
+
+/* The Close Button */
+.close {
+    color: #aaaaaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
 }
 
 #mainContent {
@@ -65,9 +102,29 @@ canvas {
     margin-bottom: 16px;
 }
 
+#activeChatRooms {
+    max-height: 70vh;
+    overflow: auto;
+}
+
 #chatBoxInnerContent {
     padding: 16px;
 
+}
+
+#chatRoomMembers {
+    width: calc(30% - 16px);
+    height: 360px;
+    margin-right: 16px;
+}
+
+#chatRoomMembersHeader {
+    background-color: black;
+    color: #20C20E;
+}
+
+#addMemberToChatRoomButton:hover {
+    cursor: pointer;
 }
 
 #ongoingChatView {
@@ -86,7 +143,6 @@ canvas {
     background-color: #649EFF;
 }
 
-/* Modal Content */
 .contactContent {
     overflow: auto;
     position: absolute;
@@ -101,7 +157,6 @@ canvas {
     animation-duration: 0.5s;
 }
 
-/* Modal Content */
 .contactContentHidden {
     overflow: auto;
     position: absolute;
@@ -116,7 +171,6 @@ canvas {
     animation-duration: 0.5s;
 }
 
-/* Modal Content */
 .chatContent {
     overflow: auto;
     position: absolute;
@@ -131,7 +185,6 @@ canvas {
     animation-duration: 0.5s;
 }
 
-/* Modal Content */
 .chatContentHidden {
     overflow: auto;
     position: absolute;
@@ -148,7 +201,7 @@ canvas {
 
 .chatRoom {
     display: inline-block;
-    width: 33%;
+    width: 33.33333%;
     height: 64px;
 }
 
@@ -214,6 +267,10 @@ canvas {
     display: inline-block;
 }
 
+.floatRight {
+    float: right;
+}
+
 .pm0 {
     margin: 0px;
     padding: 0px;
@@ -235,6 +292,10 @@ canvas {
     vertical-align: top;
 }
 
+.textAlignRight {
+    text-align: right;
+}
+
 .h38px {
     height: 38px;
 }
@@ -245,6 +306,10 @@ canvas {
 
 .h40px {
     height: 40px;
+}
+
+.maxHeight {
+    height: 100%;
 }
 
 .maxWidth {
