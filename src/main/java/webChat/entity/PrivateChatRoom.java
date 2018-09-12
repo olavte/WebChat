@@ -1,26 +1,25 @@
 package webChat.entity;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
+import javax.persistence.*;
+import java.io.Serializable;
+
+@NamedQueries({
+        @NamedQuery(name="PrivateChatRoom.findAll",
+                query="SELECT pc FROM PrivateChatRoom pc"),
+        @NamedQuery(name="PrivateChatRoom.findById",
+                query = "SELECT pc FROM PrivateChatRoom pc WHERE pc.id = :id")
+})
+@Data
+@NoArgsConstructor
 @Entity
-public class PrivateChatRoom {
-
-    public PrivateChatRoom() {}
+public class PrivateChatRoom implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
 
     private String name;
-
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }
 }

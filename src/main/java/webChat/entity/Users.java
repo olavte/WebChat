@@ -1,44 +1,27 @@
 package webChat.entity;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
+import javax.persistence.*;
+import java.io.Serializable;
+
+@NamedQueries({
+        @NamedQuery(name="Users.findAll",
+                query="SELECT u FROM Users u"),
+        @NamedQuery(name="Users.findById",
+                query = "SELECT u FROM Users u WHERE u.id = :id")
+})
+@Data
+@NoArgsConstructor
 @Entity
-public class Users {
-
-    public Users() {}
+public class Users implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private int id;
+    private Long id;
 
     private String name;
 
     private String password;
-
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public String getPassword() {
-        return password;
-    }
-
-    public void setPassword(String password) {
-        this.password = password;
-    }
 }

@@ -1,9 +1,13 @@
 package webChat;
 
 import java.util.Set;
+import javax.annotation.security.DeclareRoles;
+import javax.enterprise.context.ApplicationScoped;
 import javax.ws.rs.core.Application;
 
+@ApplicationScoped
 @javax.ws.rs.ApplicationPath("api")
+@DeclareRoles({"user", "admin"})
 public class ApplicationConfig extends Application {
 
     @Override
@@ -14,7 +18,7 @@ public class ApplicationConfig extends Application {
     }
 
     private void addRestResourceClasses(Set<Class<?>> resources) {
-        resources.add(webChat.WebService.class);
+        resources.add(WebController.class);
     }
 
 }

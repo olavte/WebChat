@@ -1,34 +1,25 @@
 package webChat.entity;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
+import javax.persistence.*;
+import java.io.Serializable;
+
+@NamedQueries({
+        @NamedQuery(name="Image.findAll",
+                query="SELECT i FROM Image i"),
+        @NamedQuery(name="Image.findById",
+                query = "SELECT i FROM Image i WHERE i.id = :id")
+})
+@Data
+@NoArgsConstructor
 @Entity
-public class Image {
-
-    public Image() {}
+public class Image implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
 
     private String link;
-
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }
-
-    public String getLink() {
-        return link;
-    }
-
-    public void setLink(String link) {
-        this.link = link;
-    }
 }

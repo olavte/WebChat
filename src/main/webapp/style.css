@@ -217,7 +217,7 @@ canvas {
 }
 
 #chatImageAddButton {
-    background: url("add-icon.png") no-repeat center;
+    background: url("images/add-icon.png") no-repeat center;
     background-size:80%;
 }
 
@@ -226,7 +226,7 @@ canvas {
 }
 
 #chatSubmitButton {
-    background: url("send-icon.png") no-repeat center;
+    background: url("images/send-icon.png") no-repeat center;
     background-size:80%;
 }
 

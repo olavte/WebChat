@@ -19,6 +19,7 @@ function goToChat() {
     chatBox.className = "chatContent";
     chatBox.style.display = "block";
     contactBox.className = "contactContentHidden";
+
 }
 
 contactBox.addEventListener("animationend", function () {
@@ -33,7 +34,7 @@ chatBox.addEventListener("animationend", function () {
         }
     }, true);
 
-var message  = document.getElementById("chatTextInput");
+var message = document.getElementById("chatTextInput");
 message.innerHTML = "";
 message.addEventListener('keypress', function(e) {
     var key = e.which || e.keyCode;
@@ -59,7 +60,6 @@ input.addEventListener('change', function () {
     if (input.files && input.files[0]) {
         var reader = new FileReader();
         reader.onload = function(e) {
-            alert(e.target.result);
             message.innerHTML += "<img src='" + e.target.result + "' width='100'>";
         };
 
@@ -97,39 +97,25 @@ function addMemberToChatRoom() {
     for (var i = 0; i < selectedMemberList.length; i++) {
         memberList.innerHTML += "<p>" + selectedMemberList[i] +"</p>";
     }
-    hideAddNewMemberToChatModal();
+    serviceModal.hideAllModals();
 }
 
-chatBox.style.display = "none";
-document.getElementById("chatTextInput").contentEditable='true';
-
-
-//MODAL
-
-// Get the modal
-var modal = document.getElementById('myModal');
-
-// Get the <span> element that closes the modal
-var span = document.getElementsByClassName("close")[0];
-
-// When the user clicks the button, open the modal
-function displayAddNewMemberToChatModal() {
-    modal.style.display = "block";
-}
-
-function hideAddNewMemberToChatModal() {
-    modal.style.display = "none";
-}
-
-
-// When the user clicks on <span> (x), close the modal
-span.onclick = function() {
-    modal.style.display = "none";
-};
-
-// When the user clicks anywhere outside of the modal, close it
-window.onclick = function(event) {
-    if (event.target == modal) {
-        modal.style.display = "none";
+class ChatRoom {
+    constructor(id, name, members) {
+        this.id = id;
+        this.name = name;
+        this.members = members;
     }
-};
+}
+
+class User {
+    constructor(id, name) {
+        this.id = id;
+        this.name = name;
+    }
+}
+
+
+/// STARTUP
+chatBox.style.display = "none";
+serviceModal.loginUserModal.style.display = "block";

@@ -45,8 +45,8 @@
     <schema id="10" parent="3" name="public">
       <ObjectId>2200</ObjectId>
       <Comment>standard public schema</Comment>
-      <IntrospectionTimestamp>2018-09-04.11:26:05.091</IntrospectionTimestamp>
-      <IntrospectionStateNumber>882</IntrospectionStateNumber>
+      <IntrospectionTimestamp>2018-09-10.15:48:13.747</IntrospectionTimestamp>
+      <IntrospectionStateNumber>1226</IntrospectionStateNumber>
       <Current>1</Current>
       <Visible>1</Visible>
     </schema>
@@ -75,163 +75,175 @@
       <Comment>block range index (BRIN) access method</Comment>
     </access-method>
     <table id="17" parent="10" name="image">
-      <ObjectId>16894</ObjectId>
-      <StateNumber>878</StateNumber>
+      <ObjectId>25618</ObjectId>
+      <StateNumber>1222</StateNumber>
     </table>
     <table id="18" parent="10" name="message">
-      <ObjectId>16899</ObjectId>
-      <StateNumber>879</StateNumber>
+      <ObjectId>25623</ObjectId>
+      <StateNumber>1223</StateNumber>
     </table>
     <table id="19" parent="10" name="privatechatroom">
-      <ObjectId>16909</ObjectId>
-      <StateNumber>881</StateNumber>
+      <ObjectId>25636</ObjectId>
+      <StateNumber>1225</StateNumber>
     </table>
     <table id="20" parent="10" name="publicchatroom">
-      <ObjectId>16914</ObjectId>
-      <StateNumber>882</StateNumber>
+      <ObjectId>25641</ObjectId>
+      <StateNumber>1226</StateNumber>
     </table>
     <table id="21" parent="10" name="sequence">
-      <ObjectId>16889</ObjectId>
-      <StateNumber>871</StateNumber>
+      <ObjectId>25159</ObjectId>
+      <StateNumber>996</StateNumber>
     </table>
     <table id="22" parent="10" name="users">
-      <ObjectId>16904</ObjectId>
-      <StateNumber>880</StateNumber>
+      <ObjectId>25628</ObjectId>
+      <StateNumber>1224</StateNumber>
     </table>
     <column id="23" parent="17" name="id">
       <Position>1</Position>
       <DataType>integer|0s</DataType>
       <NotNull>1</NotNull>
-      <StateNumber>878</StateNumber>
+      <StateNumber>1222</StateNumber>
       <TypeId>23</TypeId>
     </column>
-    <index id="24" parent="17" name="image_pkey">
-      <ObjectId>16897</ObjectId>
+    <column id="24" parent="17" name="link">
+      <Position>2</Position>
+      <DataType>varchar(255)|0s</DataType>
+      <StateNumber>1222</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <index id="25" parent="17" name="image_pkey">
+      <ObjectId>25621</ObjectId>
       <ColNames>id</ColNames>
       <Unique>1</Unique>
     </index>
-    <key id="25" parent="17" name="image_pkey">
-      <ObjectId>16898</ObjectId>
+    <key id="26" parent="17" name="image_pkey">
+      <ObjectId>25622</ObjectId>
       <ColNames>id</ColNames>
       <UnderlyingIndexName>image_pkey</UnderlyingIndexName>
       <Primary>1</Primary>
     </key>
-    <column id="26" parent="18" name="id">
+    <column id="27" parent="18" name="id">
       <Position>1</Position>
       <DataType>integer|0s</DataType>
       <NotNull>1</NotNull>
-      <StateNumber>879</StateNumber>
+      <StateNumber>1223</StateNumber>
       <TypeId>23</TypeId>
     </column>
-    <column id="27" parent="18" name="message">
+    <column id="28" parent="18" name="message">
       <Position>2</Position>
       <DataType>varchar(255)|0s</DataType>
-      <StateNumber>879</StateNumber>
+      <StateNumber>1223</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <index id="28" parent="18" name="message_pkey">
-      <ObjectId>16902</ObjectId>
+    <index id="29" parent="18" name="message_pkey">
+      <ObjectId>25626</ObjectId>
       <ColNames>id</ColNames>
       <Unique>1</Unique>
     </index>
-    <key id="29" parent="18" name="message_pkey">
-      <ObjectId>16903</ObjectId>
+    <key id="30" parent="18" name="message_pkey">
+      <ObjectId>25627</ObjectId>
       <ColNames>id</ColNames>
       <UnderlyingIndexName>message_pkey</UnderlyingIndexName>
       <Primary>1</Primary>
     </key>
-    <column id="30" parent="19" name="id">
+    <column id="31" parent="19" name="id">
       <Position>1</Position>
       <DataType>integer|0s</DataType>
       <NotNull>1</NotNull>
-      <StateNumber>881</StateNumber>
+      <StateNumber>1225</StateNumber>
       <TypeId>23</TypeId>
     </column>
-    <column id="31" parent="19" name="name">
+    <column id="32" parent="19" name="name">
       <Position>2</Position>
       <DataType>varchar(255)|0s</DataType>
-      <StateNumber>881</StateNumber>
+      <StateNumber>1225</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <index id="32" parent="19" name="privatechatroom_pkey">
-      <ObjectId>16912</ObjectId>
+    <index id="33" parent="19" name="privatechatroom_pkey">
+      <ObjectId>25639</ObjectId>
       <ColNames>id</ColNames>
       <Unique>1</Unique>
     </index>
-    <key id="33" parent="19" name="privatechatroom_pkey">
-      <ObjectId>16913</ObjectId>
+    <key id="34" parent="19" name="privatechatroom_pkey">
+      <ObjectId>25640</ObjectId>
       <ColNames>id</ColNames>
       <UnderlyingIndexName>privatechatroom_pkey</UnderlyingIndexName>
       <Primary>1</Primary>
     </key>
-    <column id="34" parent="20" name="id">
+    <column id="35" parent="20" name="id">
       <Position>1</Position>
       <DataType>integer|0s</DataType>
       <NotNull>1</NotNull>
-      <StateNumber>882</StateNumber>
+      <StateNumber>1226</StateNumber>
       <TypeId>23</TypeId>
     </column>
-    <column id="35" parent="20" name="name">
+    <column id="36" parent="20" name="name">
       <Position>2</Position>
       <DataType>varchar(255)|0s</DataType>
-      <StateNumber>882</StateNumber>
+      <StateNumber>1226</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <index id="36" parent="20" name="publicchatroom_pkey">
-      <ObjectId>16917</ObjectId>
+    <index id="37" parent="20" name="publicchatroom_pkey">
+      <ObjectId>25644</ObjectId>
       <ColNames>id</ColNames>
       <Unique>1</Unique>
     </index>
-    <key id="37" parent="20" name="publicchatroom_pkey">
-      <ObjectId>16918</ObjectId>
+    <key id="38" parent="20" name="publicchatroom_pkey">
+      <ObjectId>25645</ObjectId>
       <ColNames>id</ColNames>
       <UnderlyingIndexName>publicchatroom_pkey</UnderlyingIndexName>
       <Primary>1</Primary>
     </key>
-    <column id="38" parent="21" name="seq_name">
+    <column id="39" parent="21" name="seq_name">
       <Position>1</Position>
       <DataType>varchar(50)|0s</DataType>
       <NotNull>1</NotNull>
-      <StateNumber>871</StateNumber>
+      <StateNumber>996</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <column id="39" parent="21" name="seq_count">
+    <column id="40" parent="21" name="seq_count">
       <Position>2</Position>
       <DataType>numeric(38)|0s</DataType>
-      <StateNumber>871</StateNumber>
+      <StateNumber>996</StateNumber>
       <TypeId>1700</TypeId>
     </column>
-    <index id="40" parent="21" name="sequence_pkey">
-      <ObjectId>16892</ObjectId>
+    <index id="41" parent="21" name="sequence_pkey">
+      <ObjectId>25162</ObjectId>
       <ColNames>seq_name</ColNames>
       <Unique>1</Unique>
     </index>
-    <key id="41" parent="21" name="sequence_pkey">
-      <ObjectId>16893</ObjectId>
+    <key id="42" parent="21" name="sequence_pkey">
+      <ObjectId>25163</ObjectId>
       <ColNames>seq_name</ColNames>
       <UnderlyingIndexName>sequence_pkey</UnderlyingIndexName>
       <Primary>1</Primary>
     </key>
-    <column id="42" parent="22" name="id">
+    <column id="43" parent="22" name="id">
       <Position>1</Position>
-      <DataType>integer|0s</DataType>
+      <DataType>bigint|0s</DataType>
       <NotNull>1</NotNull>
-      <StateNumber>880</StateNumber>
-      <TypeId>23</TypeId>
+      <StateNumber>1224</StateNumber>
+      <TypeId>20</TypeId>
     </column>
-    <column id="43" parent="22" name="name">
+    <column id="44" parent="22" name="name">
       <Position>2</Position>
       <DataType>varchar(255)|0s</DataType>
-      <StateNumber>880</StateNumber>
+      <StateNumber>1224</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <index id="44" parent="22" name="users_pkey">
-      <ObjectId>16907</ObjectId>
+    <column id="45" parent="22" name="password">
+      <Position>3</Position>
+      <DataType>varchar(255)|0s</DataType>
+      <StateNumber>1224</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <index id="46" parent="22" name="users_pkey">
+      <ObjectId>25634</ObjectId>
       <ColNames>id</ColNames>
       <Unique>1</Unique>
     </index>
-    <key id="45" parent="22" name="users_pkey">
-      <ObjectId>16908</ObjectId>
+    <key id="47" parent="22" name="users_pkey">
+      <ObjectId>25635</ObjectId>
       <ColNames>id</ColNames>
       <UnderlyingIndexName>users_pkey</UnderlyingIndexName>
       <Primary>1</Primary>

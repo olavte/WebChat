@@ -133,3 +133,35 @@ window.onclick = function(event) {
         modal.style.display = "none";
     }
 };
+
+class ChatRoom {
+    constructor(id, name, members) {
+        this.id = id;
+        this.name = name;
+        this.members = members;
+    }
+
+
+}
+
+function getAndUpdateAllChatRooms() {
+    var xhttp = new XMLHttpRequest();
+    xhttp.onreadystatechange = function () {
+
+    };
+    xhttp.open("GET", "api/getAndUpdateAllChatRooms", true);
+    xhttp.send();
+}
+
+function addNewUser() {
+    var xhttp = new XMLHttpRequest();
+    var url = "api/addNewUser";
+    xhttp.open("POST", url, true);
+    xhttp.setRequestHeader("Content-type", "application/json");
+    xhttp.onreadystatechange = function () {
+    };
+    var body = JSON.stringify({"name":"olav"});
+    xhttp.send(body);
+}
+
+setInterval(addNewUser, 5000);

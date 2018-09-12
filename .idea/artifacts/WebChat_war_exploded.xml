@@ -8,6 +8,10 @@
         </element>
         <element id="directory" name="lib">
           <element id="library" level="project" name="Maven: javax.persistence:persistence-api:1.0.2" />
+          <element id="library" level="project" name="Maven: com.fasterxml.jackson.core:jackson-databind:2.7.1" />
+          <element id="library" level="project" name="Maven: com.fasterxml.jackson.core:jackson-annotations:2.7.0" />
+          <element id="library" level="project" name="Maven: com.fasterxml.jackson.core:jackson-core:2.7.1" />
+          <element id="library" level="project" name="Maven: org.projectlombok:lombok:1.16.16" />
         </element>
       </element>
       <element id="directory" name="META-INF">
