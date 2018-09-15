@@ -1,7 +1,7 @@
+webChat\entity\PrivateChat.class
 webChat\ApplicationConfig.class
 webChat\entity\Message.class
 webChat\entity\Users.class
-webChat\entity\PrivateChatRoom.class
 webChat\entity\Image.class
-webChat\entity\PublicChatRoom.class
+webChat\entity\ChatRoom.class
 webChat\WebController.class

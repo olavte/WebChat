@@ -1,0 +1,62 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/*
+    Created on : 27.aug.2018, 12:29:41
+    Author     : olavt
+*/
+
+body {
+    background-color: black;
+    margin: 0;
+    overflow: auto;
+    color: #20C20E;
+}
+
+button {
+    color: #20C20E;
+    background-color: black;
+    border: 0;
+}
+
+h2 {
+    text-align: center;
+    width: 100%;
+}
+
+canvas {
+    background-color: black;
+    display: block;
+    position:absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    z-index:-1;
+}
+
+input {
+    background-color: black;
+    color: #20C20E;
+    border: 1px solid #20C20E;
+}
+
+.shader {
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: hidden;
+    background-image: linear-gradient(rgba(0,0,0,0) , rgba(0,0,0,1));
+}
+
+#mainContent {
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 900px;
+}

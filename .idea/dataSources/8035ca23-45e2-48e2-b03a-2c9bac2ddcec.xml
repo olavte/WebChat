@@ -1,20 +1,43 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dataSource name="postgres@localhost">
-  <database-model serializer="dbm" rdbms="POSTGRES" format-version="4.9">
+  <database-model serializer="dbm" rdbms="POSTGRES" format-version="4.11">
     <root id="1">
-      <ServerVersion>9.5.14</ServerVersion>
+      <ServerVersion>10.5</ServerVersion>
     </root>
-    <database id="2" parent="1" name="astudent">
-      <ObjectId>16393</ObjectId>
-    </database>
-    <database id="3" parent="1" name="postgres">
-      <ObjectId>12373</ObjectId>
+    <database id="2" parent="1" name="postgres">
+      <ObjectId>12938</ObjectId>
       <Comment>default administrative connection database</Comment>
-      <IntrospectionStateNumber>25</IntrospectionStateNumber>
+      <Owner>postgres</Owner>
+      <IntrospectionStateNumber>116</IntrospectionStateNumber>
       <Current>1</Current>
       <Visible>1</Visible>
     </database>
-    <role id="4" parent="1" name="postgres">
+    <role id="3" parent="1" name="pg_monitor">
+      <ObjectId>3373</ObjectId>
+      <Inherit>1</Inherit>
+      <ConnectionLimit>-1</ConnectionLimit>
+    </role>
+    <role id="4" parent="1" name="pg_read_all_settings">
+      <ObjectId>3374</ObjectId>
+      <Inherit>1</Inherit>
+      <ConnectionLimit>-1</ConnectionLimit>
+    </role>
+    <role id="5" parent="1" name="pg_read_all_stats">
+      <ObjectId>3375</ObjectId>
+      <Inherit>1</Inherit>
+      <ConnectionLimit>-1</ConnectionLimit>
+    </role>
+    <role id="6" parent="1" name="pg_signal_backend">
+      <ObjectId>4200</ObjectId>
+      <Inherit>1</Inherit>
+      <ConnectionLimit>-1</ConnectionLimit>
+    </role>
+    <role id="7" parent="1" name="pg_stat_scan_tables">
+      <ObjectId>3377</ObjectId>
+      <Inherit>1</Inherit>
+      <ConnectionLimit>-1</ConnectionLimit>
+    </role>
+    <role id="8" parent="1" name="postgres">
       <ObjectId>10</ObjectId>
       <SuperRole>1</SuperRole>
       <Inherit>1</Inherit>
@@ -25,225 +48,273 @@
       <ConnectionLimit>-1</ConnectionLimit>
       <BypassRls>1</BypassRls>
     </role>
-    <schema id="5" parent="3" name="information_schema">
-      <ObjectId>12081</ObjectId>
+    <schema id="9" parent="2" name="information_schema">
+      <ObjectId>12648</ObjectId>
+      <Owner>postgres</Owner>
     </schema>
-    <schema id="6" parent="3" name="pg_catalog">
+    <schema id="10" parent="2" name="pg_catalog">
       <ObjectId>11</ObjectId>
       <Comment>system catalog schema</Comment>
+      <Owner>postgres</Owner>
     </schema>
-    <schema id="7" parent="3" name="pg_temp_1">
-      <ObjectId>11816</ObjectId>
+    <schema id="11" parent="2" name="pg_temp_1">
+      <ObjectId>11736</ObjectId>
+      <Owner>postgres</Owner>
     </schema>
-    <schema id="8" parent="3" name="pg_toast">
+    <schema id="12" parent="2" name="pg_toast">
       <ObjectId>99</ObjectId>
       <Comment>reserved schema for TOAST tables</Comment>
+      <Owner>postgres</Owner>
     </schema>
-    <schema id="9" parent="3" name="pg_toast_temp_1">
-      <ObjectId>11817</ObjectId>
+    <schema id="13" parent="2" name="pg_toast_temp_1">
+      <ObjectId>11737</ObjectId>
+      <Owner>postgres</Owner>
     </schema>
-    <schema id="10" parent="3" name="public">
+    <schema id="14" parent="2" name="public">
       <ObjectId>2200</ObjectId>
       <Comment>standard public schema</Comment>
-      <IntrospectionTimestamp>2018-09-10.15:48:13.747</IntrospectionTimestamp>
-      <IntrospectionStateNumber>1226</IntrospectionStateNumber>
+      <Owner>postgres</Owner>
+      <IntrospectionTimestamp>2018-09-14.20:41:45.690</IntrospectionTimestamp>
+      <IntrospectionStateNumber>1874</IntrospectionStateNumber>
       <Current>1</Current>
       <Visible>1</Visible>
     </schema>
-    <access-method id="11" parent="3" name="btree">
+    <access-method id="15" parent="2" name="btree">
       <ObjectId>403</ObjectId>
       <Comment>b-tree index access method</Comment>
+      <Handler>pg_catalog.bthandler</Handler>
+      <HandlerId>330</HandlerId>
+      <Type>index</Type>
     </access-method>
-    <access-method id="12" parent="3" name="hash">
+    <access-method id="16" parent="2" name="hash">
       <ObjectId>405</ObjectId>
       <Comment>hash index access method</Comment>
+      <Handler>pg_catalog.hashhandler</Handler>
+      <HandlerId>331</HandlerId>
+      <Type>index</Type>
     </access-method>
-    <access-method id="13" parent="3" name="gist">
+    <access-method id="17" parent="2" name="gist">
       <ObjectId>783</ObjectId>
       <Comment>GiST index access method</Comment>
+      <Handler>pg_catalog.gisthandler</Handler>
+      <HandlerId>332</HandlerId>
+      <Type>index</Type>
     </access-method>
-    <access-method id="14" parent="3" name="gin">
+    <access-method id="18" parent="2" name="gin">
       <ObjectId>2742</ObjectId>
       <Comment>GIN index access method</Comment>
+      <Handler>pg_catalog.ginhandler</Handler>
+      <HandlerId>333</HandlerId>
+      <Type>index</Type>
     </access-method>
-    <access-method id="15" parent="3" name="spgist">
+    <access-method id="19" parent="2" name="spgist">
       <ObjectId>4000</ObjectId>
       <Comment>SP-GiST index access method</Comment>
+      <Handler>pg_catalog.spghandler</Handler>
+      <HandlerId>334</HandlerId>
+      <Type>index</Type>
     </access-method>
-    <access-method id="16" parent="3" name="brin">
+    <access-method id="20" parent="2" name="brin">
       <ObjectId>3580</ObjectId>
       <Comment>block range index (BRIN) access method</Comment>
+      <Handler>pg_catalog.brinhandler</Handler>
+      <HandlerId>335</HandlerId>
+      <Type>index</Type>
     </access-method>
-    <table id="17" parent="10" name="image">
-      <ObjectId>25618</ObjectId>
-      <StateNumber>1222</StateNumber>
+    <table id="21" parent="14" name="chatroom">
+      <ObjectId>19174</ObjectId>
+      <Owner>postgres</Owner>
+      <StateNumber>1870</StateNumber>
     </table>
-    <table id="18" parent="10" name="message">
-      <ObjectId>25623</ObjectId>
-      <StateNumber>1223</StateNumber>
+    <table id="22" parent="14" name="image">
+      <ObjectId>19182</ObjectId>
+      <Owner>postgres</Owner>
+      <StateNumber>1871</StateNumber>
     </table>
-    <table id="19" parent="10" name="privatechatroom">
-      <ObjectId>25636</ObjectId>
-      <StateNumber>1225</StateNumber>
+    <table id="23" parent="14" name="message">
+      <ObjectId>19192</ObjectId>
+      <Owner>postgres</Owner>
+      <StateNumber>1873</StateNumber>
     </table>
-    <table id="20" parent="10" name="publicchatroom">
-      <ObjectId>25641</ObjectId>
-      <StateNumber>1226</StateNumber>
+    <table id="24" parent="14" name="privatechat">
+      <ObjectId>19187</ObjectId>
+      <Owner>postgres</Owner>
+      <StateNumber>1872</StateNumber>
     </table>
-    <table id="21" parent="10" name="sequence">
-      <ObjectId>25159</ObjectId>
-      <StateNumber>996</StateNumber>
+    <table id="25" parent="14" name="sequence">
+      <ObjectId>19138</ObjectId>
+      <Owner>postgres</Owner>
+      <StateNumber>1837</StateNumber>
     </table>
-    <table id="22" parent="10" name="users">
-      <ObjectId>25628</ObjectId>
-      <StateNumber>1224</StateNumber>
+    <table id="26" parent="14" name="users">
+      <ObjectId>19197</ObjectId>
+      <Owner>postgres</Owner>
+      <StateNumber>1874</StateNumber>
     </table>
-    <column id="23" parent="17" name="id">
+    <column id="27" parent="21" name="id">
       <Position>1</Position>
       <DataType>integer|0s</DataType>
       <NotNull>1</NotNull>
-      <StateNumber>1222</StateNumber>
+      <StateNumber>1870</StateNumber>
       <TypeId>23</TypeId>
     </column>
-    <column id="24" parent="17" name="link">
+    <column id="28" parent="21" name="name">
       <Position>2</Position>
       <DataType>varchar(255)|0s</DataType>
-      <StateNumber>1222</StateNumber>
+      <StateNumber>1870</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <index id="25" parent="17" name="image_pkey">
-      <ObjectId>25621</ObjectId>
+    <column id="29" parent="21" name="password">
+      <Position>3</Position>
+      <DataType>varchar(255)|0s</DataType>
+      <StateNumber>1870</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <column id="30" parent="21" name="removed">
+      <Position>4</Position>
+      <DataType>boolean|0s</DataType>
+      <StateNumber>1870</StateNumber>
+      <TypeId>16</TypeId>
+    </column>
+    <index id="31" parent="21" name="chatroom_pkey">
+      <ObjectId>19180</ObjectId>
       <ColNames>id</ColNames>
       <Unique>1</Unique>
     </index>
-    <key id="26" parent="17" name="image_pkey">
-      <ObjectId>25622</ObjectId>
+    <key id="32" parent="21" name="chatroom_pkey">
+      <ObjectId>19181</ObjectId>
+      <ColNames>id</ColNames>
+      <UnderlyingIndexName>chatroom_pkey</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+    <column id="33" parent="22" name="id">
+      <Position>1</Position>
+      <DataType>integer|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>1871</StateNumber>
+      <TypeId>23</TypeId>
+    </column>
+    <column id="34" parent="22" name="link">
+      <Position>2</Position>
+      <DataType>varchar(255)|0s</DataType>
+      <StateNumber>1871</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <index id="35" parent="22" name="image_pkey">
+      <ObjectId>19185</ObjectId>
+      <ColNames>id</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="36" parent="22" name="image_pkey">
+      <ObjectId>19186</ObjectId>
       <ColNames>id</ColNames>
       <UnderlyingIndexName>image_pkey</UnderlyingIndexName>
       <Primary>1</Primary>
     </key>
-    <column id="27" parent="18" name="id">
+    <column id="37" parent="23" name="id">
       <Position>1</Position>
       <DataType>integer|0s</DataType>
       <NotNull>1</NotNull>
-      <StateNumber>1223</StateNumber>
+      <StateNumber>1873</StateNumber>
       <TypeId>23</TypeId>
     </column>
-    <column id="28" parent="18" name="message">
+    <column id="38" parent="23" name="message">
       <Position>2</Position>
       <DataType>varchar(255)|0s</DataType>
-      <StateNumber>1223</StateNumber>
+      <StateNumber>1873</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <index id="29" parent="18" name="message_pkey">
-      <ObjectId>25626</ObjectId>
+    <column id="39" parent="23" name="roomnumber">
+      <Position>3</Position>
+      <DataType>integer|0s</DataType>
+      <StateNumber>1873</StateNumber>
+      <TypeId>23</TypeId>
+    </column>
+    <index id="40" parent="23" name="message_pkey">
+      <ObjectId>19195</ObjectId>
       <ColNames>id</ColNames>
       <Unique>1</Unique>
     </index>
-    <key id="30" parent="18" name="message_pkey">
-      <ObjectId>25627</ObjectId>
+    <key id="41" parent="23" name="message_pkey">
+      <ObjectId>19196</ObjectId>
       <ColNames>id</ColNames>
       <UnderlyingIndexName>message_pkey</UnderlyingIndexName>
       <Primary>1</Primary>
     </key>
-    <column id="31" parent="19" name="id">
+    <column id="42" parent="24" name="id">
       <Position>1</Position>
       <DataType>integer|0s</DataType>
       <NotNull>1</NotNull>
-      <StateNumber>1225</StateNumber>
+      <StateNumber>1872</StateNumber>
       <TypeId>23</TypeId>
     </column>
-    <column id="32" parent="19" name="name">
+    <column id="43" parent="24" name="name">
       <Position>2</Position>
       <DataType>varchar(255)|0s</DataType>
-      <StateNumber>1225</StateNumber>
+      <StateNumber>1872</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <index id="33" parent="19" name="privatechatroom_pkey">
-      <ObjectId>25639</ObjectId>
+    <index id="44" parent="24" name="privatechat_pkey">
+      <ObjectId>19190</ObjectId>
       <ColNames>id</ColNames>
       <Unique>1</Unique>
     </index>
-    <key id="34" parent="19" name="privatechatroom_pkey">
-      <ObjectId>25640</ObjectId>
+    <key id="45" parent="24" name="privatechat_pkey">
+      <ObjectId>19191</ObjectId>
       <ColNames>id</ColNames>
-      <UnderlyingIndexName>privatechatroom_pkey</UnderlyingIndexName>
+      <UnderlyingIndexName>privatechat_pkey</UnderlyingIndexName>
       <Primary>1</Primary>
     </key>
-    <column id="35" parent="20" name="id">
-      <Position>1</Position>
-      <DataType>integer|0s</DataType>
-      <NotNull>1</NotNull>
-      <StateNumber>1226</StateNumber>
-      <TypeId>23</TypeId>
-    </column>
-    <column id="36" parent="20" name="name">
-      <Position>2</Position>
-      <DataType>varchar(255)|0s</DataType>
-      <StateNumber>1226</StateNumber>
-      <TypeId>1043</TypeId>
-    </column>
-    <index id="37" parent="20" name="publicchatroom_pkey">
-      <ObjectId>25644</ObjectId>
-      <ColNames>id</ColNames>
-      <Unique>1</Unique>
-    </index>
-    <key id="38" parent="20" name="publicchatroom_pkey">
-      <ObjectId>25645</ObjectId>
-      <ColNames>id</ColNames>
-      <UnderlyingIndexName>publicchatroom_pkey</UnderlyingIndexName>
-      <Primary>1</Primary>
-    </key>
-    <column id="39" parent="21" name="seq_name">
+    <column id="46" parent="25" name="seq_name">
       <Position>1</Position>
       <DataType>varchar(50)|0s</DataType>
       <NotNull>1</NotNull>
-      <StateNumber>996</StateNumber>
+      <StateNumber>1837</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <column id="40" parent="21" name="seq_count">
+    <column id="47" parent="25" name="seq_count">
       <Position>2</Position>
       <DataType>numeric(38)|0s</DataType>
-      <StateNumber>996</StateNumber>
+      <StateNumber>1837</StateNumber>
       <TypeId>1700</TypeId>
     </column>
-    <index id="41" parent="21" name="sequence_pkey">
-      <ObjectId>25162</ObjectId>
+    <index id="48" parent="25" name="sequence_pkey">
+      <ObjectId>19141</ObjectId>
       <ColNames>seq_name</ColNames>
       <Unique>1</Unique>
     </index>
-    <key id="42" parent="21" name="sequence_pkey">
-      <ObjectId>25163</ObjectId>
+    <key id="49" parent="25" name="sequence_pkey">
+      <ObjectId>19142</ObjectId>
       <ColNames>seq_name</ColNames>
       <UnderlyingIndexName>sequence_pkey</UnderlyingIndexName>
       <Primary>1</Primary>
     </key>
-    <column id="43" parent="22" name="id">
+    <column id="50" parent="26" name="id">
       <Position>1</Position>
       <DataType>bigint|0s</DataType>
       <NotNull>1</NotNull>
-      <StateNumber>1224</StateNumber>
+      <StateNumber>1874</StateNumber>
       <TypeId>20</TypeId>
     </column>
-    <column id="44" parent="22" name="name">
+    <column id="51" parent="26" name="name">
       <Position>2</Position>
       <DataType>varchar(255)|0s</DataType>
-      <StateNumber>1224</StateNumber>
+      <StateNumber>1874</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <column id="45" parent="22" name="password">
+    <column id="52" parent="26" name="password">
       <Position>3</Position>
       <DataType>varchar(255)|0s</DataType>
-      <StateNumber>1224</StateNumber>
+      <StateNumber>1874</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <index id="46" parent="22" name="users_pkey">
-      <ObjectId>25634</ObjectId>
+    <index id="53" parent="26" name="users_pkey">
+      <ObjectId>19203</ObjectId>
       <ColNames>id</ColNames>
       <Unique>1</Unique>
     </index>
-    <key id="47" parent="22" name="users_pkey">
-      <ObjectId>25635</ObjectId>
+    <key id="54" parent="26" name="users_pkey">
+      <ObjectId>19204</ObjectId>
       <ColNames>id</ColNames>
       <UnderlyingIndexName>users_pkey</UnderlyingIndexName>
       <Primary>1</Primary>

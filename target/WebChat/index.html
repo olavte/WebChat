@@ -3,44 +3,35 @@
 <head>
     <title>Start Page</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" type="text/css" href="styles/animation.css">
+    <link rel="stylesheet" type="text/css" href="styles/general.css">
+    <link rel="stylesheet" type="text/css" href="styles/style.css">
+    <link rel="stylesheet" type="text/css" href="styles/modalCommon.css">
+    <link rel="stylesheet" type="text/css" href="styles/modalAddChatRoom.css">
+    <link rel="stylesheet" type="text/css" href="styles/modalLogin.css">
+    <link rel="stylesheet" type="text/css" href="styles/chatRoom.css">
+    <link rel="stylesheet" type="text/css" href="styles/chatRoomList.css">
 </head>
 <body>
 <!-- The Matrix -->
 <canvas id="matrix"></canvas>
 
-<!-- The Add Member to Chat Modal -->
-<div id="addUsersToChatModal" class="modal">
-    <!-- Modal content -->
-    <div class="modal-content">
-        <span class="close">&times;</span>
-        <p>Please select the members you want to add to the chat</p>
-        <div id="addMemberToChatList">
-            <div class="memberInAddMemberToChatList">
-                <p class="displayInlineBlock w70Width">
-                    Olav Telseth
-                </p><div class="addMemberToChat displayInlineBlock w30Width textAlignRight"
-                         onclick="checkMemberToChatRoom(this, 'Olav Telseth')">[ ]</div>
-            </div>
-            <div class="memberInAddMemberToChatList">
-                <p class="displayInlineBlock w70Width">
-                    Simon Synnes
-                </p><div class="addMemberToChat displayInlineBlock w30Width textAlignRight"
-                         onclick="checkMemberToChatRoom(this, 'Simon Synnes')">[ ]</div>
-            </div>
-        </div>
-        <button onclick="addMemberToChatRoom()">
-            Submit
-        </button>
-    </div>
-</div>
-
 <!-- The Add ChatRoom Modal -->
 <div id="addChatRoomModal" class="modal">
     <!-- Modal content -->
     <div class="modal-content">
-        <span class="close">&times;</span>
-        <p>Please select the members you want to add to the chat</p>
+        <span class="close" onclick="serviceModal.hideAllModals()">&times;</span>
+        <form onsubmit="viewChatRoomList.addNewChatRoom(event, this)">
+            <label>
+                ChatRoom name:
+                <input name="name" type="text" autocomplete="off" pattern=".{5,25}">
+            </label>
+            <label>
+                ChatRoom password:
+                <input name="password" type="password" autocomplete="off">
+            </label>
+            <input type="submit" value="Submit">
+        </form>
     </div>
 </div>
 
@@ -48,8 +39,14 @@
 <div id="loginUserModal" class="modal">
     <!-- Modal content -->
     <div class="modal-content">
-        <span class="close">&times;</span>
         <p>Login</p>
+        <form onsubmit="login(event, this)">
+            <label>
+                name:
+                <input name="name" type="text" autocomplete="off" pattern=".{1,25}">
+            </label>
+            <input type="submit" value="Submit">
+        </form>
     </div>
 </div>
 
@@ -58,40 +55,27 @@
     <div id="mainContent">
         <!-- ChatRooms -->
         <div id="contactBoxContent" class="contactContent">
-            <button id="newChatRoomButton" onclick="addChatRoom()">
+            <button id="newChatRoomButton" onclick="serviceModal.displayAddChatRoomModal()">
                 New ChatRoom
             </button>
             <h2>ChatRoom3000</h2>
-            <form id="chatRoomSearchForm">
-                <input id="chatRoomSearch" type="text">
+            <form id="chatRoomSearchForm" onsubmit="viewChatRoomList.filterChatRoomList(event)">
+                <input id="chatRoomSearchInput" autocomplete="off" type="text" onkeyup="viewChatRoomList.filterChatRoomList(event)">
             </form>
             <div id="activeChatRooms">
                 <button class="chatRoom" onclick="goToChat()">
-                    Open Modal
-                </button><button class="chatRoom" onclick="goToChat()">
-                    Open Modal
-                </button><button class="chatRoom" onclick="goToChat()">
-                    Open Modal
-                </button><button class="chatRoom" onclick="goToChat()">
-                    Open Modal
-                </button><button class="chatRoom" onclick="goToChat()">
-                    Open Modal
-                </button><button class="chatRoom" onclick="goToChat()">
                     Open Modal
                 </button>
             </div>
         </div>
         <!-- Chat -->
         <div id="chatBoxContent" class="chatContentHidden">
-            <span id="close">&times;</span>
+            <span id="close" onclick="currentSelectedChatRoom.close()">&times;</span>
             <div id="chatBoxInnerContent">
-                <h2>Name of the chat</h2>
+                <h2 id="nameOfChatRoom">Name of the chat</h2>
                 <div id="chatRoomMembers" class="displayInlineBlock verticalAlignTop border boxSizingBorder maxHeight">
                     <header id="chatRoomMembersHeader">
                         Members:
-                        <div id="addMemberToChatRoomButton" class="floatRight" onclick="displayAddNewMemberToChatModal()">
-                            (+)
-                        </div>
                     </header>
                     <div id="chatRoomMembersList">
 
@@ -100,10 +84,10 @@
                     <div id="ongoingChatView" class="font18px boxSizingBorder">
                     </div>
                     <div id="chatInputDialog" class="maxWidth">
-                        <div id="chatTextInput"
+                        <div id="chatTextInput" contenteditable="true"
                              class=" w90Width displayInlineBlock hMin40px pm0 verticalAlignTop border boxSizingBorder">
                         </div><div id="chatImageAddButton" onclick="addAsset()" class="w5Width displayInlineBlock h40px pm0 verticalAlignTop">
-                    </div><div id="chatSubmitButton" class="w5Width displayInlineBlock h40px pm0 boxSizingBorder verticalAlignTop" onclick="submitMessageToChat()">
+                    </div><div id="chatSubmitButton" onclick="currentSelectedChatRoom.addMessage()" class="w5Width displayInlineBlock h40px pm0 boxSizingBorder verticalAlignTop">
                         </div>
                     </div>
                 </div>
@@ -111,7 +95,13 @@
         </div>
     </div>
 </div>
-<script src="script.js"></script>
-<script src="matrix.js"></script>
+<script src="scripts/FXMatrix.js"></script>
+<script src="scripts/EntityMessage.js"></script>
+<script src="scripts/EntityUser.js"></script>
+<script src="scripts/ServiceModal.js"></script>
+<script src="scripts/ServiceREST.js"></script>
+<script src="scripts/EntityChatRoom.js"></script>
+<script src="scripts/ServiceChatRoomList.js"></script>
+<script src="scripts/main.js"></script>
 </body>
 </html>

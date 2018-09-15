@@ -1,0 +1,19 @@
+@keyframes downOne {
+    from {margin-top: 0px; opacity: 0;}
+    to {margin-top: 120px; opacity: 1;}
+}
+
+@keyframes upOne {
+    from {margin-top: 120px; opacity: 1;}
+    to {margin-top: 0px; opacity: 0;}
+}
+
+@keyframes upTwo {
+    from {margin-top: 100vh; opacity: 0;}
+    to {margin-top: 120px; opacity: 1;}
+}
+
+@keyframes downTwo {
+    from {margin-top: 120px; opacity: 1;}
+    to {margin-top: 100vh; opacity: 0;}
+}

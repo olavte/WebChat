@@ -2,12 +2,6 @@ class ServiceModal {
     constructor(addChatRoomModal, loginUserModal, addUsersToChatModal) {
         this.addChatRoomModal = addChatRoomModal;
         this.loginUserModal = loginUserModal;
-        this.addUsersToChatModal = addUsersToChatModal;
-    }
-
-    displayAddNewMemberToChatModal() {
-        this.hideAllModals();
-        this.addUsersToChatModal.style.display = "block";
     }
 
     displayAddChatRoomModal() {
@@ -23,20 +17,18 @@ class ServiceModal {
     hideAllModals() {
         this.addChatRoomModal.style.display = "none";
         this.loginUserModal.style.display = "none";
-        this.addUsersToChatModal.style.display = "none";
     }
 
     hideModalsOnClick(event) {
-        if (event.target == addUsersToChatModal) {
-            this.hideAllModals();
-        } else if (event.target == addChatRoomModal) {
+        if (event.target == this.addChatRoomModal) {
             this.hideAllModals();
         }
     }
 }
 
-var serviceModal = new ServiceModal(document.getElementById('addChatRoomModal'),
-    document.getElementById('loginUserModal'), document.getElementById('addUsersToChatModal'));
+const serviceModal = new ServiceModal(document.getElementById('addChatRoomModal'),
+    document.getElementById('loginUserModal'));
+serviceModal.displayLoginUserModal();
 
 window.onclick = function(event) {
     serviceModal.hideModalsOnClick(event);

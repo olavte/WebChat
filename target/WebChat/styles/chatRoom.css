@@ -1,0 +1,100 @@
+#chatRoomMembers {
+    width: calc(30% - 16px);
+    height: 360px;
+    margin-right: 16px;
+}
+
+#chatBoxInnerContent {
+    padding: 16px;
+}
+
+#chatRoomMembersHeader {
+    background-color: black;
+    color: #20C20E;
+}
+
+#ongoingChatView {
+    border: solid 1px black;
+    border-radius: 25px;
+    overflow: auto;
+    padding: 8px;
+    margin-bottom: 16px;
+    height: 300px;
+}
+
+#chatTextInput {
+    font-size: 18px;
+    border-radius: 25px;
+    padding: 8px;
+}
+
+#chatTextInput:focus {
+    outline: none;
+    border: 2px solid #649EFF;
+}
+
+#chatImageAddButton {
+    background: url("../images/add-icon.png") no-repeat center;
+    background-size:80%;
+}
+
+#chatImageAddButton:hover {
+    cursor: pointer;
+}
+
+#chatSubmitButton {
+    background: url("../images/send-icon.png") no-repeat center;
+    background-size:80%;
+}
+
+#chatSubmitButton:hover {
+    cursor: pointer;
+    -webkit-transform: rotate(-90deg);
+    -moz-transform: rotate(-90deg);
+    -ms-transform: rotate(-90deg);
+    -o-transform: rotate(-90deg);
+    transform: rotate(-90deg);
+}
+
+#close {
+    color: #20C20E;
+    float: right;
+    font-size: 28px;
+    margin-right: 16px;
+    font-weight: bold;
+}
+
+#close:hover,
+#close:focus {
+    color: #649EFF;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.chatContent {
+    overflow: auto;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: black;
+    border: 1px solid #20C20E;
+    opacity: 1;
+    margin-top: 120px;
+    animation-name: upTwo;
+    animation-duration: 0.5s;
+}
+
+.chatContentHidden {
+    overflow: auto;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: black;
+    border: 1px solid #20C20E;
+    opacity: 1;
+    margin-top: 100vh;
+    animation-name: downTwo;
+    animation-duration: 0.5s;
+}
